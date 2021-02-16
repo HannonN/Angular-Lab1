@@ -1,0 +1,55 @@
+.header {
+  background: #eee;
+  margin: 0;
+  padding: 0;
+}
+.todo-container {
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #eee; */
+  height: 50%;
+  width: 50%;
+  position: relative;
+}
+.fltr-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fltr-btn {
+  background-color: #f857a6;
+  border-color: #f857a6;
+  border-radius: 5px;
+  color: #eee;
+}
+
+.x-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: none;
+  border-radius: 0;
+}
+
+.complete-btn {
+  background-color: #eee;
+  color: #f857a6;
+  border: solid 1px #f857a6;
+  border-radius: 10px;
+  position: absolute;
+}
+.completed {
+  text-decoration: line-through;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-btn {
+  background-color: #f857a6;
+  color: #eee;
+  border-radius: 5px;
+  border-color: #f857a6;
+}

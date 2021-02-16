@@ -1,0 +1,38 @@
+<header class="header">
+  <h1>Honey Do List</h1>
+</header>
+<main class="main-container">
+  <div class="second-text">A Place to store your todos</div>
+  <form
+    class="fltr-form"
+    #filterForm="ngForm"
+    (input)="setSearchTerm(filterForm)"
+  >
+    <label for="term"></label>
+    <input
+      type="text"
+      id="term"
+      name="term"
+      placeholder="Filter your To-dos"
+      ngModel
+    />
+    <button class="fltr-btn">Filter</button>
+  </form>
+
+  <ol
+    *ngFor="let todo of filterTodos(searchTerm); index as i"
+    class="todo-container"
+  >
+    <li>
+      <button *ngIf="!todo.completed" class="complete-btn">Complete</button>
+      <p [ngClass]="{ completed: todo.completed }">Task:{{ todo.task }}</p>
+      <button class="x-btn" (click)="deleteTodo(i)">X</button>
+    </li>
+  </ol>
+
+  <form class="footer" #addForm="ngForm" (ngSubmit)="addTodo(addForm, todos)">
+    <label for="task" class="footer-text">Add your To-dos</label>
+    <input type="text" id="task" name="task" ngModel />
+    <button class="add-btn">Add</button>
+  </form>
+</main>
